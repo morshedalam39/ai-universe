@@ -40,7 +40,13 @@ const getALLData = () => {
 
  }
 
-
+ const loadAllCard = () => {
+  fetch("https://openapi.programming-hero.com/api/ai/tools")
+    .then((res) => res.json())
+    .then((data) => displayData(data.data.tools));
+    const seeBtn =document.getElementById('see-btn');
+    seeBtn.classList.add('d-none')
+};
 getALLData()
 
 
