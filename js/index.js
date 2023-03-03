@@ -11,7 +11,7 @@ const getALLData = () => {
     
 };
  const displayData = (data)=>{
-    console.log(data)
+    // console.log(data)
     
     const allCards=document.getElementById('all-cards');
     allCards.innerHTML = "";
@@ -37,7 +37,9 @@ const getALLData = () => {
         </div>
         <div class="mt-3" >
 
-        <i class="fas fa-arrow-right btn btn-danger rounded opacity-75"  data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+        <i class="fas fa-arrow-right btn btn-danger rounded opacity-75"  data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="getSingleData('${
+          card.id
+        }')"></i>
       </div>
 
         </div>
@@ -69,7 +71,25 @@ const getALLData = () => {
 };
 
 
+const getSingleData = (id) => {
 
+  const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+
+  fetch(URL)
+    .then((res) => res.json())
+    .then((data) => showSingleData(data.data));
+};
+
+const showSingleData = (data) => {
+  document.getElementById('modalBody').innerHTML=`
+ 
+  `
+
+};
 getALLData()
+
+
+
+
 
 
