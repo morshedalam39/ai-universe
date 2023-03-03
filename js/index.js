@@ -87,20 +87,20 @@ const showSingleData = (data) => {
   <div class="d-flex gap-3 mt-3">
   <div class="border border-secondary-subtle rounded p-2 bg-light text-success">
   <ul style="list-style:none">
-  <li class="text-center"><h6>${data.pricing[0].price ? data.pricing[0].price : 'Free of Cost/Basic'}</h6></li>
-  <li><h5>${data.pricing[0].plan}</h5></li>
+  <li class="text-center"><h6>${data.pricing ? data.pricing[0].price : 'Free of Cost/Basic' }</h6></li>
+  <li><h5>${data.pricing ? data.pricing[0].plan : 'not data fonud'}</h5></li>
   </ul>
   </div>
   <div class="border border-secondary-subtle rounded p-2 bg-light text-danger">
   <ul style="list-style:none">
-  <li ><h6>${data.pricing[1].price}</h6></li>
-  <li><h5>${data.pricing[1].plan}</h5></li>
+  <li ><h6>${data.pricing ? data.pricing[1].price : 'Free Of Cost/Pro' }</h6></li>
+  <li><h5>${data.pricing ? data.pricing[1].plan : 'not data fonud'}</h5></li>
   </ul>
   </div>
   <div class="border border-secondary-subtle rounded p-2 bg-light text-danger-emphasis">
   <ul style="list-style:none">
-  <li ><h6>${data.pricing[2].price}</h6></li>
-  <li><h5>${data.pricing[2].plan}</h5></li>
+  <li ><h6>${data.pricing ? data.pricing[2].price : 'Free of Cost /Enterprise' }</h6></li>
+  <li><h5>${data.pricing ? data.pricing[2].plan : 'not data fonud'}</h5></li>
   </ul>
   </div>
   </div>
@@ -128,8 +128,7 @@ const showSingleData = (data) => {
   <div class="w-50 border border-danger-subtle p-3">
   <img class="img-fluid" src="${data.image_link[0]}">
   <div class="position-relative">
-
-  
+  <h6 style="position:absolute; top:-260px; left:350px;background-color:#fb5200; padding:8px 15px;color:white;border-radius:10px">${data.accuracy.score ? data.accuracy.score : 'No'} Accuracy</h6>
   </div>
   <h5 class="text-center  mt-2 fw-bold">${data.input_output_examples[0].input}</h5>
   <p class="text-center mt-2">${data.input_output_examples[1].output ? data.input_output_examples[1].output : 'No! Not Yet! Take a break!'}</p>
